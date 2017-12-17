@@ -1,4 +1,5 @@
 #lang racket
+(require racket/cmdline)
 (struct state (stt cur-pos) #:transparent)
 
 (define (main input reps)
@@ -28,7 +29,19 @@
          (state (add1 cur-val) (add1 insert-index))
          (state (state-stt stt) (add1 insert-index)))))
 
-(define tester (main 3 2017))
-(main 370 2017)
+(define part-2 (make-parameter #f))
+
+(command-line
+ #:program "day17"
+ #:once-each
+ [("-p" "--part2") "Execute Part 2"
+                    (part-2 #t)]
+ #:args (input loops)
+ (if (part-2)
+     (main2-wrapper (string->number input) (string->number loops))
+     (main (string->number input) (string->number loops)))
+ )
+
+
 
 #;(define part2-output (main2 370 50000000))
