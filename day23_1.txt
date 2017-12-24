@@ -1,0 +1,1 @@
+I forgot to save the editted file where I just added jnz, but it was my day18 or whatever corresponding day's solution just run with sub and jnz added in

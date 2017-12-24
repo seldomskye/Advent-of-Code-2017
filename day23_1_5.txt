@@ -1,0 +1,25 @@
+#Initial State
+b = 105700
+c = 122700
+
+while (b != c):
+  f = 1
+  d = 2
+  // continue from here
+  while (d != b):
+    e = 2
+    while (e != b):
+      if (d * e  == b):
+        f = 0
+      e += 1
+    d += 1
+
+  if (f == 0):
+    h += 1
+  b += 17
+
+for each value between 105700 and 122700 counting by 17's
+If it's not prime, increment h by 1
+
+
+
